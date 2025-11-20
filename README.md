@@ -1,6 +1,28 @@
-# Implementation of the 6 horizon detection algorithms, with the dataset creation and testing result analysis
-
+# Horizon Detection Pipeline
 Made by: Alisa Pesotskaia 
+
+This repository implements **six horizon detection algorithms**, including:
+
+- H-HC  
+- H-LSC  
+- H-MED  
+- H-COV-LUM  
+- Segment  
+- DexiNed  
+
+It includes:
+
+1. **Dataset creation** – extracting frames from videos and organizing annotations.  
+2. **Algorithm implementation** – running each horizon detection method.  
+3. **Testing and result analysis** – computing accuracy metrics, visualizing results, and performing statistical comparisons.
+
+
+## Project Aims
+
+This project aims to answer the following research questions:
+
+- **Which horizon detection method provides the best trade-off between computational efficiency and detection accuracy** when using ship-based and drone-based images in ice-covered waters?  
+- **How does the performance of classical and hybrid deep learning-classical horizon detection methods vary** when applied to ship-based versus drone-based images in ice-covered waters?
 
 ## Setup of the environment
 Not needed as all the ipynb files can be run in Google Colab directly
@@ -147,3 +169,16 @@ The figure below shows the distribution of accuracy metrics across all methods.
 The figure below shows the predicted horizon by the **H-HC** method for 2 frames from each video:
 
 ![Predicted Horizon Example](data/h_hc_pred.png)
+
+## Key Findings
+
+**Research Question 1:**  
+The best trade-off between computational efficiency and detection accuracy is:
+
+- **Drone-based images:** DexiNed  
+- **Boat-based images:** Segment  
+
+H-HC remains competitive, and in scenarios with limited computational resources, H-HC is the preferred alternative to hybrid deep learning-classical methods.  
+
+**Research Question 2:**  
+Performance metrics indicate that detecting the horizon is **more challenging in drone-based images** than in boat-based images. Specifically, **Normalized Mean Height Deviation (NMHD)** and **Mean Angle Deviation (MAD)** are substantially better for **boat-based images**, showing that method performance varies with the image source.
