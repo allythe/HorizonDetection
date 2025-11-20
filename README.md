@@ -83,7 +83,7 @@ To annotate your videos, follow these steps:
 
 Here is a short demonstration of the horizon annotation workflow in CVAT:
 
-![CVAT Annotation Demo](./gifs/cvat.gif)
+![CVAT Annotation Demo](data/cvat.gif)
 
 ### Pre-Created Dataset
 
@@ -94,11 +94,56 @@ The already created dataset is available [here](https://drive.google.com/drive/f
 To extract annotated frames from a video:
 
 1. Upload the video and its corresponding XML annotation file to **Google Drive**.  
-2. Open and run the notebook [**DatasetFromCVAT.ipynb**](./DatasetFromCVAT.ipynb).  
+2. Open and run the notebook [**DatasetFromCVAT.ipynb**](./DatasetFromCVAT.ipynb) in Google Colab.  
    - This notebook parses the video and extracts frames.  
    - It also saves a CSV file containing the polyline coordinates for all selected frames.
+## Running the Horizon Detection Algorithms
 
-## Running the horizon detection algorithms
+The implementation is available in the notebook [**Algorithms.ipynb**](./Algorithms.ipynb).
 
+### Brief Outline
 
+This document implements a pipeline for running multiple horizon detection methods on images, including:
 
+- **H-HC**
+- **H-LSC**
+- **H-MED**
+- **H-COV-LUM**
+- **Segment**
+- **DexiNed**
+
+The code is organized into three main parts:
+
+1. **Implementation of the algorithms** – defining all horizon detection methods.  
+2. **Running the algorithms on a single image** – visualize results and adjust parameters.  
+3. **Running the algorithms on all images** – process the full dataset and save predicted horizon coordinates to a CSV file.
+
+After completing the third part, the results will be saved to **Google Drive** in CSV format.
+
+### Example of Detected Horizon
+
+The figure below shows an example of a detected horizon using the DexiNed algorithm.
+
+![Detected Horizon Example](data/Algorithm_example.png)
+
+## Analyzing the Horizon Detection Results
+
+The implementation and full analysis are available in the notebook [**StatisticalAnalysis.ipynb**](./StatisticalAnalysis.ipynb).  
+It includes:
+
+- Accuracy metric calculations  
+- Boxplots of results  
+- Mann-Whitney U tests with Holm-Bonferroni correction  
+- Visualization of predicted and ground truth horizons
+
+### Box Plot for All Methods
+
+The figure below shows the distribution of accuracy metrics across all methods.  
+
+![Detected Horizon Example](data/result.png)
+
+### Predicted Horizon Example – H-HC
+
+The figure below shows the predicted horizon by the **H-HC** method for 2 frames from each video:
+
+![Predicted Horizon Example](data/h_hc_pred.png)
