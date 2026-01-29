@@ -181,4 +181,4 @@ The best trade-off between computational efficiency and detection accuracy is:
 H-HC remains competitive, and in scenarios with limited computational resources, H-HC is the preferred alternative to hybrid deep learning-classical methods.  
 
 **Research Question 2:**  
-Performance metrics indicate that detecting the horizon is **more challenging in drone-based images** than in boat-based images. Specifically, **Normalized Mean Height Deviation (NMHD)** and **Mean Angle Deviation (MAD)** are substantially better for **boat-based images**, showing that method performance varies with the image source.
+Performance metrics indicate that detecting the horizon is **more challenging in drone-based images** than in boat-based images. Specifically, **Normalized Mean Height Deviation (NMHD)** and **Mean Angle Deviation (MAD)** are substantially better for **boat-based images**, showing  that method performance varies with the image source.
